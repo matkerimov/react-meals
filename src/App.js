@@ -6,9 +6,11 @@ import Browse from "./Browse";
 const App = () => {
     return (
         <BrowserRouter>
-            <Route exact path="/"><AllMeals/></Route>
-            <Route path="/meal/:id"><MealDetails/></Route>
-            <Route path="/meal/:id/browse/:name"><Browse /></Route>
+            <div className="container">
+                <Route exact path="/"><AllMeals/></Route>
+                <Route path="/meal/:id"><MealDetails/></Route>
+                <Route path="/meal/:id/browse/:name"><Browse /></Route>
+            </div>
         </BrowserRouter>
     );
 };
