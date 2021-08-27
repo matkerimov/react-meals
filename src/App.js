@@ -9,7 +9,7 @@ const App = () => {
             <div className="container">
                 <Route exact path="/"><AllMeals/></Route>
                 <Route path="/meal/:id"><MealDetails/></Route>
-                <Route path="/meal/:id/browse/:name"><Browse /></Route>
+                <Route path="/browse/:search"><Browse /></Route>
             </div>
         </BrowserRouter>
     );

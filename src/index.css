@@ -17,6 +17,7 @@ a{
 }
 img{
   width: 100%;
+
 }
 .box{
   margin-bottom: 30px;
@@ -32,4 +33,12 @@ img{
   max-width: 1140px;
   margin: 0 auto;
   padding: 20px 0;
+}
+.img{
+  display: inline-block;
+  display: flex;
+
+}
+.meal-image{
+  width: 50%;
 }
