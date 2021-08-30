@@ -3,6 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+/*body{*/
+/*  background: url("https://images.unsplash.com/photo-1572916118992-5e36d71f7f5c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80");*/
+/*  height: 100vh;*/
+/*  width: 100%;*/
+/*}*/
 a{
   text-decoration: none;
 }
@@ -29,16 +34,32 @@ img{
   width: 50%;
   padding: 0 15px;
 }
+.meal-name{
+color: burlywood ;
+}
 .container{
   max-width: 1140px;
   margin: 0 auto;
   padding: 20px 0;
 }
 .img{
-  display: inline-block;
   display: flex;
-
+  flex-wrap: wrap;
 }
-.meal-image{
-  width: 50%;
+.ingredients{
+  display: flex;
+}
+.ingredients-image{
+  width: 100px;
+}
+.search{
+  text-align: center;
+}
+/*.img-col{*/
+/*  display: flex;*/
+/*  width: 25%;*/
+/*}*/
+.ingr-img{
+  /*display: inline;*/
+  width: 25%;
 }
