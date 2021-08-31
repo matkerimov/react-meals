@@ -24,7 +24,7 @@ const AllMeals = () => {
     }
 
     return (
-        <div>
+        <div >
             <input onChange={searchInput} type='text'/>
             <button onClick={heandleClick}>Search</button>
             <div className="row">

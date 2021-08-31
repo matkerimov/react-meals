@@ -1,6 +1,9 @@
 import  {useEffect, useState} from 'react';
 import {useParams, Link} from 'react-router-dom'
 import axios from "axios";
+import {useHistory} from "react-router-dom";
+
+
 
 const MealDetails = () => {
     const params = useParams()
@@ -24,10 +27,13 @@ const MealDetails = () => {
                 setVideo(str.slice(str.indexOf('v=') + 2, str.length))
             })
     },[params.id])
+    const history = useHistory();
 
 
     return (
         <div >
+            <button onClick={() => history.goBack()}>Go Back</button>
+
             <div className="row">
                 <div className="col-details">
                     <img src={meal.strMealThumb} alt="" className="meals-images"/>

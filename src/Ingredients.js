@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import {useParams, Link} from "react-router-dom";
+import {useParams, Link, useHistory} from "react-router-dom";
 
 const Ingredients = () => {
     const [ingr, setIngr] = useState([])
@@ -10,9 +10,12 @@ const Ingredients = () => {
         axios(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${params.name}`)
             .then(({data})=> setIngr(data.meals))
     }, [params.name])
+
+    const history = useHistory();
+
     return (
         <div>
-            qweqet
+            <button onClick={() => history.goBack()}>Go Back</button>
             {
                 ingr.map(item =>(
                     <div>
