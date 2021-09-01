@@ -12,21 +12,35 @@ const AllMeals = () => {
             .then(({data}) => setMeals(data.meals))
     }, [])
 
-    const searchInput = (e) => {
-        setSearch(e.target.value)
+    const searchInput = (event) => {
+        setSearch(event.target.value)
+        // let key = event.keyCode
+        // if (searchInput.value && key === 13) {
+        //     const template = `<li class="list-item">
+        //                     <input type="checkbox" class="done">
+        //                     ${searchInput.value}
+        //                     <button class="del-btn">delete</button>
+        //                    </li>`
+        //     searchInput.innerHTML += template
+        // }
     }
-    const heandleClick = () =>{
-        if (search.trim()){
-           return  history.push(`browse/${search}`)
-        }else{
+
+    const heandleClick = () => {
+        if (search.trim()) {
+            return history.push(`browse/${search}`)
+        } else {
             return "NOT FOUND"
         }
     }
 
+
     return (
-        <div >
-            <input onChange={searchInput} type='text'/>
-            <button onClick={heandleClick}>Search</button>
+        <div>
+            {/*<div className="div-inout">*/}
+                <input onChange={searchInput} onKeyPress={event => {if (event.key === "Enter")heandleClick()}} type='text' className="input"/>
+                <button onClick={heandleClick}>Search</button>
+
+            {/*</div>*/}
             <div className="row">
                 {
                     meals.map(item => (
@@ -45,4 +59,5 @@ const AllMeals = () => {
     );
 };
 
-export default AllMeals;
+
+ export default AllMeals;

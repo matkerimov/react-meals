@@ -9,6 +9,7 @@ const MealDetails = () => {
     const params = useParams()
     const [meal, setMeal] = useState({})
     const [video, setVideo] = useState('')
+    const history = useHistory();
 
     const strIngredients = Array(20).fill(0).reduce((acc, item, idx) => {
         if (meal[`strIngredient${idx +1}`]){
@@ -16,6 +17,7 @@ const MealDetails = () => {
         }
         return acc
     }, [])
+
     useEffect(()=>{
         axios(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.id}`)
             .then(({data})=> {
@@ -27,7 +29,6 @@ const MealDetails = () => {
                 setVideo(str.slice(str.indexOf('v=') + 2, str.length))
             })
     },[params.id])
-    const history = useHistory();
 
 
     return (

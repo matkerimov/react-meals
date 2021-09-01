@@ -20,7 +20,7 @@ const Browse = () => {
                 {
                     searchMeals.map(item =>
                         <div key={item.idMeal}>
-                            <Link to={`/meal/${item.strMeal}`}>
+                            <Link to={`/meal/${item.idMeal}`}>
                                 <img src={item.strMealThumb} alt=""/>
                                 <p>{item.strMeal}</p>
                             </Link>
